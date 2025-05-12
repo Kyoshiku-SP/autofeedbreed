@@ -1,0 +1,40 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+!gradle/wrapper/
+
+gradlew
+gradlew.bat
+
+# Fabric
+run/
+*.jar                   
+
+# Logs
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+*.log
+
+# Cache
+.cache/
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macOS
+*.DS_Store
+
+# Eclipse
+*.launch

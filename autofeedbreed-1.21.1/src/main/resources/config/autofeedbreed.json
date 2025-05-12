@@ -1,0 +1,14 @@
+{
+  "cropEatCooldown": 30,
+  "loveDuration": 600,
+  "animalCropMap": {
+    "minecraft:cow": "minecraft:wheat",
+    "minecraft:pig": "minecraft:carrots",
+    "minecraft:sheep": "minecraft:potatoes"
+  },
+  "breedCooldowns": {
+    "minecraft:cow": 12000,
+    "minecraft:sheep": 12000,
+    "minecraft:pig": 12000
+  }
+}

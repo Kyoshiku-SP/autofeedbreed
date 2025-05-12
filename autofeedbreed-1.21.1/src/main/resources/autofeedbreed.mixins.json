@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "com.kyoshiku.autofeedbreed.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"AnimalEntityMixin",
+		"MobEntityAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

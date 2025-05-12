@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "autofeedbreed",
+	"version": "${version}",
+	"name": "AutoFeedBreed",
+	"description": "Automatically feeds and breeds animals by letting them eat nearby crops and replant them. Works with both vanilla and modded animals and crops via config.",
+	"authors": ["Kyoshiku"],
+	"contact": {
+		"sources": "https://github.com/Kyoshiku-SP/autofeedbreed"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/autofeedbreed/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.kyoshiku.autofeedbreed.AutoFeedBreed"
+		]
+	},
+	"mixins": [
+		"autofeedbreed.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.13.0",
+		"minecraft": "1.21.1",
+		"fabric": "*"
+	}
+}
