@@ -9,7 +9,7 @@
 		"sources": "https://github.com/Kyoshiku-SP/autofeedbreed"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/autofeedbreed/icon.png",
+	"icon": "assets/autofeedbreed/icon3.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
