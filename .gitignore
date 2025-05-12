@@ -6,9 +6,6 @@ classes/
 !gradle/wrapper/
 !gradle/wrapper/gradle-wrapper.jar
 
-gradlew
-gradlew.bat
-
 # Fabric
 run/
 *.jar                   
