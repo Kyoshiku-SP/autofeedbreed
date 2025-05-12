@@ -1,7 +1,6 @@
 package com.kyoshiku.autofeedbreed;
 
 import com.kyoshiku.autofeedbreed.goal.EatReplantBreedGoal;
-import com.kyoshiku.autofeedbreed.mixin.MobEntityAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.CropBlock;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -26,7 +25,7 @@ public class AutoBreedGoalRegistry {
                 // Debug message only
 //                System.out.println("[AutoFeedBreed] Injected goal for " + entityId + " with crop: " + cropId);
                 // Inject the EatReplantBreedGoal into the entity's goal selector
-                ((MobEntityAccessor) self).getGoalSelector()
+                ((MobEntityGoalAccess) self).getGoalSelector()
                         .add(1, new EatReplantBreedGoal(animal, crop));
             } else {
 //                System.out.println("[AutoFeedBreed] Warning: Block " + cropId + " is not a CropBlock.");
