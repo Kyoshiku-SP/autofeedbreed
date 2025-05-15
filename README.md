@@ -27,18 +27,20 @@ config/autofeedbreed.json
 Example:
 ```json
 {
-  "cropEatCooldown": 30,
+  "cropEatCooldown": 300,
   "loveDuration": 600,
+  "breedCooldown": 300,
   "animalCropMap": {
     "minecraft:cow": "minecraft:wheat",
     "minecraft:pig": "minecraft:carrots",
     "minecraft:sheep": "minecraft:potatoes"
   },
   "breedCooldowns": {
-    "minecraft:cow": 12000,
-    "minecraft:sheep": 12000,
-    "minecraft:pig": 12000
-  }
+    "minecraft:cow": 6000,
+    "minecraft:pig": 6000,
+    "minecraft:sheep": 6000
+  },
+  "defaultBreedCooldown": 6000
 }
 ```
 
