@@ -13,7 +13,6 @@ import com.kyoshiku.autofeedbreed.AutoFeedBreed;
 import net.minecraft.world.World;
 
 import java.util.EnumSet;
-import java.util.List;
 
 public class EatReplantBreedGoal extends Goal {
     private final AnimalEntity animal;
@@ -30,20 +29,24 @@ public class EatReplantBreedGoal extends Goal {
     // Determines whether the goal can start
     // Only adults, off cooldown, and if a mature crop is nearby
     public boolean canStart() {
-        // Prevent baby animals from interacting with crops
-        if (animal.isBaby()) return false; // Prevent baby animals from eating crops
-
+        if (animal.isBaby()) return false;
         if (!(animal instanceof AnimalFeedBreedState state)) return false;
 
         long now = System.currentTimeMillis();
 
-        if (now < state.getCooldownEnd()) return false;
+        // Reset breed/eat state if breeding cooldown is over
+        if (state.hasBred() && now >= state.getBreedingCooldownEnd()) {
+            state.setHasBred(false);
+            state.setHasEaten(false);
+        }
 
-        // Reset state after cooldown
-        // Reset per-animal custom state after cooldown ends
-        state.setHasEaten(false);
-        state.setHasBred(false);
+        // Still on eating cooldown
+        if (now < state.getEatingCooldownEnd()) return false;
 
+        // Already ate, waiting for partner
+        if (state.hasEaten()) return false;
+
+        // Search for crop
         BlockPos center = animal.getBlockPos();
         for (BlockPos pos : BlockPos.iterate(center.add(-4, -1, -4), center.add(4, 1, 4))) {
             BlockState cropState = animal.getWorld().getBlockState(pos);
@@ -96,66 +99,48 @@ public class EatReplantBreedGoal extends Goal {
         );
 
         World world = animal.getWorld();
+
+        // Safely get custom animal state
+        if (!(animal instanceof AnimalFeedBreedState state)) return;
+
         // Replace the fully grown crop with a replanted one
         world.setBlockState(targetPos, cropBlock.getDefaultState(), 3);
-        // Set this animal into love mode
-        // Put this animal into love mode
-        animal.setLoveTicks(600);
 
-        // Try to find a mate
-        if (animal instanceof AnimalFeedBreedState state) {
-            // Also put nearby animals into love mode if ready
-            List<AnimalEntity> potentialMates = world.getEntitiesByClass(
-                    AnimalEntity.class,
-                    animal.getBoundingBox().expand(8.0),
-                    other -> other != animal &&
-                            other.getClass() == animal.getClass()
-            );
+        // Mark this animal has eaten
+        state.setHasEaten(true);
 
-            for (AnimalEntity other : potentialMates) {
-                if (other instanceof AnimalFeedBreedState state2 &&
-                        System.currentTimeMillis() >= state2.getCooldownEnd()) {
-                    // Put mates into love mode if they're ready
-                    other.setLoveTicks(600);
-                }
+        long now = System.currentTimeMillis();
+
+        // Apply eating cooldown after eating
+        state.setEatingCooldownEnd(now + AutoFeedBreed.CONFIG.cropEatCooldown * 1000L);
+
+        // Only enter love mode and breed if eligible
+        if (!state.hasBred() && now >= state.getBreedingCooldownEnd()) {
+            // Set this animal into love mode
+            animal.setLoveTicks(AutoFeedBreed.CONFIG.loveDuration);
+
+            // Breed by self (automatically create baby)
+            AnimalEntity mate = animal; // simulate a mate
+            AnimalEntity baby = (AnimalEntity) animal.createChild((ServerWorld) world, mate);
+            if (baby != null) {
+                baby.setBreedingAge(-24000); // Ensure baby doesn't instantly grow
+                baby.refreshPositionAndAngles(animal.getX(), animal.getY(), animal.getZ(), 0.0F, 0.0F);
+                world.spawnEntity(baby);
             }
 
-            // Try to breed
-            List<AnimalEntity> mates = world.getEntitiesByClass(
-                    AnimalEntity.class,
-                    animal.getBoundingBox().expand(8.0),
-                    other -> other != animal &&
-                            other.getClass() == animal.getClass() &&
-                            other.isInLove()
+            // Apply vanilla Minecraft breeding age cooldown
+            Identifier entityId = Registries.ENTITY_TYPE.getId(animal.getType());
+            int breedCooldown = AutoFeedBreed.CONFIG.breedCooldowns.getOrDefault(
+                    entityId.toString(),
+                    AutoFeedBreed.CONFIG.defaultBreedCooldown
             );
+            animal.setBreedingAge(breedCooldown);
+            animal.resetLoveTicks();
 
-            if (!mates.isEmpty()) {
-                AnimalEntity mate = mates.get(0);
-
-                AnimalEntity baby = (AnimalEntity) animal.createChild((ServerWorld) world, mate);
-                if (baby != null) {
-                    baby.setBaby(true);
-                    baby.refreshPositionAndAngles(animal.getX(), animal.getY(), animal.getZ(), 0.0F, 0.0F);
-                    world.spawnEntity(baby);
-                }
-
-                Identifier entityId = Registries.ENTITY_TYPE.getId(animal.getType());
-                int breedCooldown = AutoFeedBreed.CONFIG.breedCooldowns.getOrDefault(
-                        entityId.toString(),
-                        AutoFeedBreed.CONFIG.defaultBreedCooldown
-                );
-                // Apply per-animal cooldown after successful breeding
-                animal.setBreedingAge(breedCooldown);
-                mate.setBreedingAge(breedCooldown);
-                animal.resetLoveTicks();
-                mate.resetLoveTicks();
-
-                state.setHasBred(true);
-                // Reset per-animal custom state after cooldown ends
-                state.setHasEaten(false);
-            } else {
-                state.setHasBred(false);
-            }
+            // Reset state
+            state.setHasBred(true);
+            state.setBreedingCooldownEnd(now + AutoFeedBreed.CONFIG.breedCooldown * 1000L);
+            state.setHasEaten(false);
         }
 
         targetPos = null;

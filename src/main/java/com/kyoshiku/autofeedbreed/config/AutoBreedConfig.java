@@ -7,6 +7,7 @@ public class AutoBreedConfig {
     public int cropEatCooldown = 30; // seconds
     public int loveDuration = 600;   // ticks
     public int defaultBreedCooldown = 10000; // fallback
+    public int breedCooldown = 60; // in seconds
 
     // Per-animal crop config
     public Map<String, String> animalCropMap = new HashMap<>();

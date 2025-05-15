@@ -9,4 +9,10 @@ public interface AnimalFeedBreedState {
 
     long getCooldownEnd();
     void setCooldownEnd(long time);
+
+    long getEatingCooldownEnd();
+    void setEatingCooldownEnd(long time);
+
+    long getBreedingCooldownEnd();
+    void setBreedingCooldownEnd(long time);
 }
