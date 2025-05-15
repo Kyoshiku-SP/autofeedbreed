@@ -12,6 +12,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(AnimalEntity.class)
 // Mixin that injects goal registration into all AnimalEntity types
 public class AnimalEntityMixin implements AnimalFeedBreedState {
+    private long eatingCooldownEnd = 0;
+    private long breedingCooldownEnd = 0;
     // Tracks whether this animal has eaten a crop yet
     @Unique
     private boolean autofeed_hasEaten = false;
@@ -52,12 +54,14 @@ public class AnimalEntityMixin implements AnimalFeedBreedState {
     }
 
     @Override
-    public long getCooldownEnd() {
-        return autofeed_cooldownEnd;
-    }
+    public long getEatingCooldownEnd() { return eatingCooldownEnd; }
 
     @Override
-    public void setCooldownEnd(long time) {
-        autofeed_cooldownEnd = time;
-    }
+    public void setEatingCooldownEnd(long time) { this.eatingCooldownEnd = time; }
+
+    @Override
+    public long getBreedingCooldownEnd() { return breedingCooldownEnd; }
+
+    @Override
+    public void setBreedingCooldownEnd(long time) { this.breedingCooldownEnd = time; }
 }
