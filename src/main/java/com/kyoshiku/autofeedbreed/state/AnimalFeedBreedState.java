@@ -7,9 +7,6 @@ public interface AnimalFeedBreedState {
     boolean hasBred();
     void setHasBred(boolean value);
 
-    long getCooldownEnd();
-    void setCooldownEnd(long time);
-
     long getEatingCooldownEnd();
     void setEatingCooldownEnd(long time);
 

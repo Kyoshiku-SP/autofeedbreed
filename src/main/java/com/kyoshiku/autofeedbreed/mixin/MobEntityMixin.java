@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(MobEntity.class)
 public abstract class MobEntityMixin implements MobEntityGoalAccess {
     @Shadow @Final
-    private GoalSelector goalSelector;
+    protected GoalSelector goalSelector;
 
     @Override
     public GoalSelector getGoalSelector() {

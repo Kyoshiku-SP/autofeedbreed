@@ -54,16 +54,6 @@ public class AnimalEntityMixin implements AnimalFeedBreedState {
     }
 
     @Override
-    public long getCooldownEnd() {
-        return autofeed_cooldownEnd;
-    }
-
-    @Override
-    public void setCooldownEnd(long time) {
-        autofeed_cooldownEnd = time;
-    }
-
-    @Override
     public long getEatingCooldownEnd() { return eatingCooldownEnd; }
 
     @Override
