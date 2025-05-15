@@ -100,7 +100,6 @@ public class EatReplantBreedGoal extends Goal {
 
         World world = animal.getWorld();
 
-        // Safely get custom animal state
         if (!(animal instanceof AnimalFeedBreedState state)) return;
 
         // Replace the fully grown crop with a replanted one
@@ -119,11 +118,11 @@ public class EatReplantBreedGoal extends Goal {
             // Set this animal into love mode
             animal.setLoveTicks(AutoFeedBreed.CONFIG.loveDuration);
 
-            // Breed by self (automatically create baby)
-            AnimalEntity mate = animal; // simulate a mate
+            // Breed by self
+            AnimalEntity mate = animal;
             AnimalEntity baby = (AnimalEntity) animal.createChild((ServerWorld) world, mate);
             if (baby != null) {
-                baby.setBreedingAge(-24000); // Ensure baby doesn't instantly grow
+                baby.setBreedingAge(-24000);
                 baby.refreshPositionAndAngles(animal.getX(), animal.getY(), animal.getZ(), 0.0F, 0.0F);
                 world.spawnEntity(baby);
             }
