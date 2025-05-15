@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AutoBreedConfig {
-    public int cropEatCooldown = 30; // seconds
+    public int cropEatCooldown = 300; // seconds
     public int loveDuration = 600;   // ticks
-    public int defaultBreedCooldown = 10000; // fallback
-    public int breedCooldown = 60; // in seconds
+    public int defaultBreedCooldown = 6000; // fallback
+    public int breedCooldown = 300; // in seconds
 
     // Per-animal crop config
     public Map<String, String> animalCropMap = new HashMap<>();
@@ -22,8 +22,8 @@ public class AutoBreedConfig {
         animalCropMap.put("minecraft:sheep", "minecraft:potatoes");
 
         // Per animal breed cooldowns
-        breedCooldowns.put("minecraft:cow", 12000);   // 10 min
-        breedCooldowns.put("minecraft:sheep", 12000);
-        breedCooldowns.put("minecraft:pig", 12000);
+        breedCooldowns.put("minecraft:cow", 6000);   // 5 min
+        breedCooldowns.put("minecraft:sheep", 6000);
+        breedCooldowns.put("minecraft:pig", 6000);
     }
 }
