@@ -5,7 +5,7 @@ AutoFeedBreed is a Fabric mod for Minecraft 1.21.1 that automatically handles an
 Animals will:
 - Eat nearby fully grown crops (wheat, carrots, potatoes, etc.)
 - Replant the crop after eating
-- Breed with another animal of the same type
+- Breed itself
 - Prevent baby animals from eating crops until they grow up
 - Repeat this cycle automatically without player interaction
 
