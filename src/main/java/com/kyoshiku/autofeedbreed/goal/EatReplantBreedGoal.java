@@ -6,12 +6,14 @@ import net.minecraft.block.CropBlock;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import com.kyoshiku.autofeedbreed.AutoFeedBreed;
 import net.minecraft.world.World;
 
+import java.util.Collection;
 import java.util.EnumSet;
 
 public class EatReplantBreedGoal extends Goal {
@@ -50,12 +52,27 @@ public class EatReplantBreedGoal extends Goal {
         BlockPos center = animal.getBlockPos();
         for (BlockPos pos : BlockPos.iterate(center.add(-4, -1, -4), center.add(4, 1, 4))) {
             BlockState cropState = animal.getWorld().getBlockState(pos);
-            if (cropState.getBlock() == cropBlock && cropState.get(CropBlock.AGE) == cropBlock.getMaxAge()) {
-                targetPos = pos;
-                return true;
+            Property<?> ageProp = cropState.getProperties().stream()
+                    .filter(p -> p.getName().equals("age") && p.getType() == Integer.class)
+                    .findFirst()
+                    .orElse(null);
+
+            // Only proceed if the block matches and the age property exists
+            if (cropState.getBlock().equals(cropBlock) && ageProp != null) {
+                int currentAge = (Integer) cropState.get(ageProp);
+
+                @SuppressWarnings("unchecked")
+                int maxAge = ((Collection<Integer>) ageProp.getValues())
+                        .stream()
+                        .max(Integer::compareTo)
+                        .orElse(7);
+
+                if (currentAge == maxAge) {
+                    targetPos = pos;
+                    return true;
+                }
             }
         }
-
         return false;
     }
 
