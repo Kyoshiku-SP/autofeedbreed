@@ -22,10 +22,6 @@ public class AnimalEntityMixin implements AnimalFeedBreedState {
     @Unique
     private boolean afbHasBred = false;
 
-    // Timestamp when this animal can next eat/breed again
-    @Unique
-    private int cooldownTicks = 0;
-
     // Injects after AnimalEntity constructor to assign the EatReplantBreedGoal
     @Inject(method = "<init>", at = @At("TAIL"))
     private void onConstructed(CallbackInfo ci) {
