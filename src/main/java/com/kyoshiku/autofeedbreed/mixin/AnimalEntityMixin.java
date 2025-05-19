@@ -16,15 +16,15 @@ public class AnimalEntityMixin implements AnimalFeedBreedState {
     private long breedingCooldownEnd = 0;
     // Tracks whether this animal has eaten a crop yet
     @Unique
-    private boolean autofeed_hasEaten = false;
+    private boolean afbHasEaten = false;
 
     // Tracks whether this animal has bred since last eating
     @Unique
-    private boolean autofeed_hasBred = false;
+    private boolean afbHasBred = false;
 
     // Timestamp when this animal can next eat/breed again
     @Unique
-    private long autofeed_cooldownEnd = 0;
+    private int cooldownTicks = 0;
 
     // Injects after AnimalEntity constructor to assign the EatReplantBreedGoal
     @Inject(method = "<init>", at = @At("TAIL"))
@@ -35,33 +35,41 @@ public class AnimalEntityMixin implements AnimalFeedBreedState {
 
     @Override
     public boolean hasEaten() {
-        return autofeed_hasEaten;
+        return afbHasEaten;
     }
 
     @Override
     public void setHasEaten(boolean value) {
-        autofeed_hasEaten = value;
+        afbHasEaten = value;
     }
 
     @Override
     public boolean hasBred() {
-        return autofeed_hasBred;
+        return afbHasBred;
     }
 
     @Override
     public void setHasBred(boolean value) {
-        autofeed_hasBred = value;
+        afbHasBred = value;
     }
 
     @Override
-    public long getEatingCooldownEnd() { return eatingCooldownEnd; }
+    public long getEatingCooldownEnd() {
+        return eatingCooldownEnd;
+    }
 
     @Override
-    public void setEatingCooldownEnd(long time) { this.eatingCooldownEnd = time; }
+    public void setEatingCooldownEnd(long time) {
+        this.eatingCooldownEnd = time;
+    }
 
     @Override
-    public long getBreedingCooldownEnd() { return breedingCooldownEnd; }
+    public long getBreedingCooldownEnd() {
+        return breedingCooldownEnd;
+    }
 
     @Override
-    public void setBreedingCooldownEnd(long time) { this.breedingCooldownEnd = time; }
+    public void setBreedingCooldownEnd(long time) {
+        this.breedingCooldownEnd = time;
+    }
 }
