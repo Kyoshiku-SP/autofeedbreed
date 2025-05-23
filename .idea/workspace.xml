@@ -5,44 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da5572b1-8911-494c-b300-c9d3a1c5e629" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fabric/.github/workflows/build.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/AutoBreedGoalRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/AutoFeedBreed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/MobEntityGoalAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/config/AutoBreedConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/goal/EatReplantBreedGoal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/mixin/AnimalEntityMixin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/mixin/LivingEntityMixin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/mixin/MobEntityMixin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/java/com/kyoshiku/autofeedbreed/state/AnimalFeedBreedState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/resources/assets/autofeedbreed/afb-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/resources/autofeedbreed.mixins.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/resources/config/autofeedbreed.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fabric/src/main/resources/fabric.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/AutoBreedGoalRegistry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/AutoFeedBreed.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/MobEntityGoalAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/config/AutoBreedConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/goal/EatReplantBreedGoal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/mixin/AnimalEntityMixin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/mixin/LivingEntityMixin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/mixin/MobEntityMixin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kyoshiku/autofeedbreed/state/AnimalFeedBreedState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/autofeedbreed/afb-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/autofeedbreed.mixins.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/autofeedbreed.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fabric.mod.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +18,31 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="autofeedbreed" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="autofeedbreed" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -73,39 +63,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Minecraft Client.executor": "Debug",
-    "Application.Minecraft Server.executor": "Debug",
-    "Gradle.Build autobreedfabric-template-1.21.1.executor": "Run",
-    "Gradle.Build autofeedbreed.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.autobreedfabric-template-1.21.1 [:net.fabricmc.devlaunchinjector.Main.main()].executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/geeks/Documents/GitHub/autofeedbreed",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Minecraft Client.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Minecraft Server.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.Build autobreedfabric-template-1.21.1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build autofeedbreed.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.autobreedfabric-template-1.21.1 [:net.fabricmc.devlaunchinjector.Main.main()].executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;neoforge-branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/geeks/Documents/GitHub/autofeedbreed&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\geeks\Downloads\autobreedfabric-template-1.21.1\src\main\java\com\kyoshiku\autobreedfabric\tracking" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\geeks\Documents\GitHub\autofeedbreed\fabric" />
       <recent name="C:\Users\geeks\Documents\GitHub\autofeedbreed\src\main\resources\assets\autofeedbreed" />
       <recent name="C:\Users\geeks\Downloads\autobreedfabric-template-1.21.1\src\main\resources\config" />
       <recent name="C:\Users\geeks\Downloads\autobreedfabric-template-1.21.1\src\main\resources" />
@@ -115,7 +106,6 @@
       <recent name="com.kyoshiku.autobreedfabric.mixin" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Minecraft Server" />
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -154,7 +144,8 @@
       <workItem from="1747606168441" duration="3418000" />
       <workItem from="1747609959377" duration="8124000" />
       <workItem from="1748040600453" duration="167000" />
-      <workItem from="1748040840234" duration="609000" />
+      <workItem from="1748040840234" duration="2625000" />
+      <workItem from="1748043508642" duration="19000" />
     </task>
     <servers />
   </component>

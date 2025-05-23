@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/autofeedbreed.main.iml" filepath="$PROJECT_DIR$/.idea/modules/autofeedbreed.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/autofeedbreed.test.iml" filepath="$PROJECT_DIR$/.idea/modules/autofeedbreed.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/autofeedbreed.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/autofeedbreed.fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/autofeedbreed.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/autofeedbreed.fabric.test.iml" />
     </modules>
   </component>
 </project>
