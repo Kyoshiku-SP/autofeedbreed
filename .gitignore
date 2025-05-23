@@ -3,11 +3,11 @@
 build/
 out/
 classes/
-!gradle/wrapper/
-!gradle/wrapper/gradle-wrapper.jar
+!fabric/gradle/wrapper/
+!fabric/gradle/wrapper/gradle-wrapper.jar
 
 # Fabric
-run/
+fabric/run/
 *.jar                   
 
 # Logs
@@ -21,7 +21,7 @@ replay_*.log
 .cache/
 
 # IDEs
-.idea/
+fabric/.idea/
 *.iml
 *.ipr
 *.iws
